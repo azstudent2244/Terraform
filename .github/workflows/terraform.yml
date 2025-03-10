@@ -70,8 +70,16 @@ jobs:
     # Install the latest version of Terraform CLI and configure the Terraform CLI configuration file with a Terraform Cloud user API token
     - name: Setup Terraform
       uses: hashicorp/setup-terraform@v1
-      with:
-        cli_config_credentials_token: ${{ secrets.TF_API_TOKEN }}
+    #  with:
+    #    cli_config_credentials_token: ${{ secrets.TF_API_TOKEN }}
+
+    - name: Azure Login using Service Principal
+       uses: azure/login@v1  # Azure login action to authenticate using SP
+    with:
+      client-id: ${{ secrets.AZURE_CLIENT_ID }}  # The Service Principal's client ID
+      client-secret: ${{ secrets.AZURE_CLIENT_SECRET }}  # The Service Principal's client secret
+      tenant-id: ${{ secrets.AZURE_TENANT_ID }}  # The Azure Tenant ID
+      subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}  # The Azure Subscription ID
 
     # Initialize a new or existing Terraform working directory by creating initial files, loading any remote state, downloading modules, etc.
     - name: Terraform Init
