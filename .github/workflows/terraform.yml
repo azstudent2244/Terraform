@@ -74,7 +74,7 @@ jobs:
     #    cli_config_credentials_token: ${{ secrets.TF_API_TOKEN }}
 
     - name: Azure Login using Service Principal
-       uses: azure/login@v1  # Azure login action to authenticate using SP
+      uses: azure/login@v1  # Azure login action to authenticate using SP
     with:
       client-id: ${{ secrets.AZURE_CLIENT_ID }}  # The Service Principal's client ID
       client-secret: ${{ secrets.AZURE_CLIENT_SECRET }}  # The Service Principal's client secret
