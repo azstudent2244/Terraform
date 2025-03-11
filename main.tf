@@ -29,12 +29,11 @@ resource "azurerm_resource_group" "rg" {
 }
 
 resource "azurerm_storage_account" "str1" {
-  name                     = testalbstrg001
-  resource_group_name      = azurerm_resource_group.rg.name
-  account_tier             = "Standard"
+  name                = testalbstrg001
+  resource_group_name = azurerm_resource_group.rg.name
+  account_tier = "Standard"
   account_replication_type = "LRS"
-  location                 = azurerm_resource_group.rg.location
-
+  location = azurerm_resource_group.rg.location
 }
 
 resource "azurerm_virtual_network" "vnet111" {
