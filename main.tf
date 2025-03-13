@@ -4,9 +4,8 @@ terraform {
     resource_group_name  = "Test_RG"
     storage_account_name = "testalbstrg001"
     container_name       = "terraform-state"
-    key                  = "f4uLP29Likmy0ed5La74HYDhz3U93RKtnqRCZ7UdgAP/HGMeoJIuI9EToYCrXvkzqbM+ROmwRqfu+AStGBEkCQ=="
+    }
 
-  }
   required_version = "~> 1.11.1"
   required_providers {
     azurerm = {
