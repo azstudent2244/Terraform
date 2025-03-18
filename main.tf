@@ -4,7 +4,8 @@ terraform {
     resource_group_name  = "Test_RG"
     storage_account_name = "testalbstrg001"
     container_name       = "terraform-state"
-    }
+    key                  = "f4uLP29Likmy0ed5La74HYDhz3U93RKtnqRCZ7UdgAP"
+  }
 
   required_version = "~> 1.11.1"
   required_providers {
@@ -28,11 +29,11 @@ resource "azurerm_resource_group" "rg" {
 }
 
 resource "azurerm_storage_account" "str1" {
-  name                = testalbstrg001
-  resource_group_name = azurerm_resource_group.rg.name
-  account_tier = "Standard"
+  name                     = testalbstrg001
+  resource_group_name      = azurerm_resource_group.rg.name
+  account_tier             = "Standard"
   account_replication_type = "LRS"
-  location = azurerm_resource_group.rg.location
+  location                 = azurerm_resource_group.rg.location
 }
 
 resource "azurerm_virtual_network" "vnet111" {
