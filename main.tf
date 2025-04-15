@@ -43,3 +43,9 @@ resource "azurerm_virtual_network" "vnet111" {
   location            = azurerm_resource_group.rg.location
 }
 # koment
+resource "azurerm_virtual_network" "vnet1311" {
+  name                = "vnet1131"
+  resource_group_name = azurerm_resource_group.rg.name
+  address_space       = ["10.0.0.0/16"]
+  location            = azurerm_resource_group.rg.location
+}
